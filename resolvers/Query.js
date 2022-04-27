@@ -1,5 +1,5 @@
-
 import { db } from "../data/db.js";
+
 export const Query = {
     hello: (parent, args, context, info) => {
         console.log('parent : ', parent);
@@ -22,9 +22,6 @@ export const Query = {
             (student) => student.id == id
         );
     },
-    getAllClassroom: (parent, args , { db }) => {
-        return db.classroom;
-    },
     getAllTodos: (parent,args,{db}) => {
         return db.todos;
     },
@@ -40,5 +37,9 @@ export const Query = {
         return db.users.find(
             (user) => user.id == id
         );
-    }
+    },
+
+    getAllClassroom: (parent, args , { db }) => {
+        return db.classroom;
+    },
 }
